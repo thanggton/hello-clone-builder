@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as WhoWeAreRouteImport } from './routes/who-we-are'
+import { Route as SolutionsRouteImport } from './routes/solutions'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as CareersRouteImport } from './routes/careers'
 import { Route as BrandsRouteImport } from './routes/brands'
@@ -18,6 +19,11 @@ import { Route as IndexRouteImport } from './routes/index'
 const WhoWeAreRoute = WhoWeAreRouteImport.update({
   id: '/who-we-are',
   path: '/who-we-are',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SolutionsRoute = SolutionsRouteImport.update({
+  id: '/solutions',
+  path: '/solutions',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ContactRoute = ContactRouteImport.update({
@@ -46,6 +52,7 @@ export interface FileRoutesByFullPath {
   '/brands': typeof BrandsRoute
   '/careers': typeof CareersRoute
   '/contact': typeof ContactRoute
+  '/solutions': typeof SolutionsRoute
   '/who-we-are': typeof WhoWeAreRoute
 }
 export interface FileRoutesByTo {
@@ -53,6 +60,7 @@ export interface FileRoutesByTo {
   '/brands': typeof BrandsRoute
   '/careers': typeof CareersRoute
   '/contact': typeof ContactRoute
+  '/solutions': typeof SolutionsRoute
   '/who-we-are': typeof WhoWeAreRoute
 }
 export interface FileRoutesById {
@@ -61,14 +69,28 @@ export interface FileRoutesById {
   '/brands': typeof BrandsRoute
   '/careers': typeof CareersRoute
   '/contact': typeof ContactRoute
+  '/solutions': typeof SolutionsRoute
   '/who-we-are': typeof WhoWeAreRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/brands' | '/careers' | '/contact' | '/who-we-are'
+  fullPaths:
+    | '/'
+    | '/brands'
+    | '/careers'
+    | '/contact'
+    | '/solutions'
+    | '/who-we-are'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/brands' | '/careers' | '/contact' | '/who-we-are'
-  id: '__root__' | '/' | '/brands' | '/careers' | '/contact' | '/who-we-are'
+  to: '/' | '/brands' | '/careers' | '/contact' | '/solutions' | '/who-we-are'
+  id:
+    | '__root__'
+    | '/'
+    | '/brands'
+    | '/careers'
+    | '/contact'
+    | '/solutions'
+    | '/who-we-are'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -76,6 +98,7 @@ export interface RootRouteChildren {
   BrandsRoute: typeof BrandsRoute
   CareersRoute: typeof CareersRoute
   ContactRoute: typeof ContactRoute
+  SolutionsRoute: typeof SolutionsRoute
   WhoWeAreRoute: typeof WhoWeAreRoute
 }
 
@@ -86,6 +109,13 @@ declare module '@tanstack/react-router' {
       path: '/who-we-are'
       fullPath: '/who-we-are'
       preLoaderRoute: typeof WhoWeAreRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/solutions': {
+      id: '/solutions'
+      path: '/solutions'
+      fullPath: '/solutions'
+      preLoaderRoute: typeof SolutionsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/contact': {
@@ -124,6 +154,7 @@ const rootRouteChildren: RootRouteChildren = {
   BrandsRoute: BrandsRoute,
   CareersRoute: CareersRoute,
   ContactRoute: ContactRoute,
+  SolutionsRoute: SolutionsRoute,
   WhoWeAreRoute: WhoWeAreRoute,
 }
 export const routeTree = rootRouteImport

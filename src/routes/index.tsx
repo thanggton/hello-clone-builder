@@ -1,172 +1,204 @@
-import { createFileRoute } from "@tanstack/react-router";
-import { Link } from "@tanstack/react-router";
-import heroImage from "@/assets/hero.jpg";
-import { SiteLayout } from "@/components/site/Layout";
-import { brands } from "@/components/site/brands";
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { ArrowRight, ArrowUpRight, Check, Database, GitBranch, Sparkles } from "lucide-react";
+import { ContactCTA, SiteLayout } from "@/components/site/Layout";
+import { deliverySteps, pageMeta, products, services } from "@/components/site/content";
 
 export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { title: "Get Hello — Redefining Social Connections" },
-      {
-        name: "description",
-        content:
-          "Get Hello is a leading social and entertainment platform company, building apps that foster meaningful connections across diverse communities worldwide.",
-      },
-      { property: "og:title", content: "Get Hello — Redefining Social Connections" },
-      {
-        property: "og:description",
-        content:
-          "Building apps that foster meaningful connections across diverse communities worldwide.",
-      },
-    ],
-  }),
+  head: () =>
+    pageMeta(
+      "AI that moves work forward",
+      "GetHello, a product of Sabupps, builds custom AI agentic solutions and workflow intelligence products for business teams.",
+    ),
   component: Index,
 });
-
-const stats = [
-  { value: "350M+", label: "Messages sent daily" },
-  { value: "1.3B+", label: "Registered users" },
-  { value: "20M+", label: "Matches across apps" },
-  { value: "100,000+", label: "Live streaming hours daily" },
-  { value: "300,000+", label: "Voice chatroom hours daily" },
-  { value: "1,300+", label: "Employees worldwide" },
-];
-
 
 function Index() {
   return (
     <SiteLayout>
-      {/* HERO */}
-      <section className="relative isolate overflow-hidden bg-[var(--surface-darker)] text-white">
-        <img
-          src={heroImage}
-          alt="People connecting through their phones at night"
-          width={1920}
-          height={1080}
-          className="absolute inset-0 h-full w-full object-cover opacity-55"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/80" />
-        <div className="relative mx-auto flex max-w-7xl flex-col justify-center px-6 py-32 md:py-48 lg:py-56">
-          <p className="mb-6 text-sm font-medium uppercase tracking-[0.25em] text-primary">
-            Get Hello
-          </p>
-          <h1 className="max-w-4xl text-4xl font-semibold leading-[1.1] tracking-tight md:text-6xl lg:text-7xl">
-            To discover friends you haven&apos;t met yet.
-          </h1>
-          <p className="mt-8 max-w-2xl text-base text-white/75 md:text-lg">
-            We build platforms that bring people together — across cities, languages and
-            cultures — through chat, live streaming, voice rooms and dating.
-          </p>
-          <div className="mt-10 flex flex-wrap gap-4">
-            <Link
-              to="/brands"
-              className="inline-flex h-12 items-center justify-center rounded-sm bg-primary px-7 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary/90"
-            >
-              Explore our brands
-            </Link>
-            <Link
-              to="/who-we-are"
-              className="inline-flex h-12 items-center justify-center rounded-sm border border-white/30 px-7 text-sm font-semibold text-white transition-colors hover:bg-white/10"
-            >
-              Who we are
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* MISSION + STATS */}
-      <section id="about" className="border-b border-border bg-background py-24 md:py-32">
-        <div className="mx-auto max-w-7xl px-6">
-          <div className="grid gap-12 md:grid-cols-12">
-            <div className="md:col-span-5">
-              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-primary">
-                Our Mission
-              </p>
-              <h2 className="mt-4 text-3xl font-semibold tracking-tight md:text-5xl">
-                Redefining Social Connections.
-              </h2>
-            </div>
-            <div className="md:col-span-7">
-              <p className="text-lg leading-relaxed text-muted-foreground">
-                We&apos;re here to revolutionize digital connections by seamlessly blending
-                technology with human experiences. We build impactful platforms that foster
-                meaningful connections across diverse communities — making it easier for
-                people to meet, share moments, and build relationships that matter.
-              </p>
-            </div>
-          </div>
-
-          <div className="mt-20 grid grid-cols-2 gap-px overflow-hidden rounded-sm border border-border bg-border md:grid-cols-3">
-            {stats.map((s) => (
-              <div key={s.label} className="bg-background p-8 md:p-10">
-                <div className="text-4xl font-semibold tracking-tight text-foreground md:text-5xl">
-                  {s.value}
-                </div>
-                <div className="mt-3 text-sm text-muted-foreground">{s.label}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* BRANDS */}
-      <section id="brands" className="bg-[var(--surface-darker)] py-24 text-white md:py-32">
-        <div className="mx-auto max-w-7xl px-6">
-          <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
-            <div>
-              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-primary">
-                Our Brands
-              </p>
-              <h2 className="mt-4 max-w-2xl text-3xl font-semibold tracking-tight md:text-5xl">
-                A family of apps connecting millions every day.
-              </h2>
-            </div>
-            <Link
-              to="/brands"
-              className="text-sm font-semibold text-primary transition-colors hover:text-primary/80"
-            >
-              Learn more →
-            </Link>
-          </div>
-
-          <div className="mt-16 grid gap-px overflow-hidden rounded-sm bg-white/10 sm:grid-cols-2 lg:grid-cols-4">
-            {brands.slice(0, 4).map((b) => (
-              <div
-                key={b.name}
-                className="group flex flex-col bg-[var(--surface-darker)] p-8 transition-colors hover:bg-[var(--surface-dark)]"
-              >
-                <div className="grid h-20 w-20 place-items-center rounded-sm bg-white/5 text-2xl font-black text-white transition-colors group-hover:bg-primary">
-                  {b.name.charAt(0)}
-                </div>
-                <h3 className="mt-6 text-2xl font-semibold">{b.name}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-white/65">{b.tagline}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section id="careers" className="border-y border-border bg-secondary py-24">
-        <div className="mx-auto flex max-w-5xl flex-col items-start justify-between gap-8 px-6 md:flex-row md:items-center">
+      <section className="dark-panel relative isolate overflow-hidden">
+        <div className="hero-grid absolute inset-0 opacity-30" />
+        <div className="relative mx-auto grid max-w-7xl items-center gap-16 px-6 py-24 lg:grid-cols-[1.2fr_1fr] lg:py-32">
           <div>
-            <h2 className="text-3xl font-semibold tracking-tight md:text-4xl">
-              Build the future of social with us.
-            </h2>
-            <p className="mt-3 max-w-xl text-muted-foreground">
-              We&apos;re hiring across engineering, product, design and operations in
-              offices worldwide.
+            <p className="eyebrow flex items-center gap-3 text-primary">
+              <span className="h-2 w-2 rounded-full bg-primary" />
+              GetHello · A product of Sabupps
+            </p>
+            <h1 className="mt-7 text-5xl font-medium leading-[1.04] tracking-[-0.045em] sm:text-6xl lg:text-7xl">
+              Intelligence that
+              <br />
+              moves work
+              <br />
+              <span className="text-primary">forward.</span>
+            </h1>
+            <p className="mt-8 max-w-lg text-lg leading-8 text-white/65">
+              We build AI agents that work with your people, connect to your systems, and turn
+              complex workflows into purposeful action.
+            </p>
+            <div className="mt-10 flex flex-wrap gap-4">
+              <Link to="/contact" className="button-primary">
+                Build with us <ArrowUpRight size={18} />
+              </Link>
+              <Link to="/brands" className="button-outline">
+                Explore products <ArrowRight size={18} />
+              </Link>
+            </div>
+            <p className="mt-10 text-xs tracking-wide text-white/45">
+              CUSTOM AI SOLUTIONS &nbsp; / &nbsp; WORKFLOW INTELLIGENCE
             </p>
           </div>
-          <Link
-            to="/careers"
-            className="inline-flex h-12 shrink-0 items-center justify-center rounded-sm bg-primary px-7 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary/90"
+          <div
+            className="workflow-demo rounded-2xl border border-white/15 bg-[#142b29] p-6 shadow-2xl sm:p-8"
+            aria-label="Illustrative AI workflow: business request, knowledge and context, agent plan, human approval, completed action"
           >
-            View open roles
-          </Link>
+            <div className="mb-8 flex items-center justify-between border-b border-white/10 pb-5">
+              <span className="text-sm font-medium">A smarter path from ask to action</span>
+              <span className="rounded-full border border-primary/30 px-2 py-1 text-[10px] text-primary">
+                ILLUSTRATION
+              </span>
+            </div>
+            <div className="workflow-node">
+              <span className="node-icon">
+                <GitBranch size={19} />
+              </span>
+              <div>
+                <p className="text-xs text-white/45">01 / TRIGGER</p>
+                <p className="mt-1 text-sm">A new business request</p>
+              </div>
+            </div>
+            <div className="workflow-line" />
+            <div className="workflow-node">
+              <span className="node-icon">
+                <Database size={19} />
+              </span>
+              <div>
+                <p className="text-xs text-white/45">02 / CONTEXT</p>
+                <p className="mt-1 text-sm">Your knowledge. Your systems.</p>
+              </div>
+            </div>
+            <div className="workflow-line" />
+            <div className="workflow-node !border-primary/40 !bg-primary/10">
+              <span className="node-icon !bg-primary !text-[#102522]">
+                <Sparkles size={19} />
+              </span>
+              <div>
+                <p className="text-xs text-primary">03 / REASON & ACT</p>
+                <p className="mt-1 text-sm">An agent builds the next step</p>
+              </div>
+            </div>
+            <div className="workflow-line" />
+            <div className="flex items-center gap-3 rounded-lg border border-dashed border-white/20 px-4 py-3">
+              <span className="h-2 w-2 rounded-full bg-amber-300" />
+              <p className="text-xs text-white/70">Human approval where it matters</p>
+            </div>
+            <div className="workflow-line" />
+            <div className="flex items-center gap-3 text-sm text-primary">
+              <Check size={18} />
+              Action completed. Outcome recorded.
+            </div>
+          </div>
+        </div>
+        <div className="border-t border-white/10">
+          <div className="mx-auto flex max-w-7xl flex-wrap justify-between gap-4 px-6 py-6 text-xs tracking-wide text-white/50">
+            <span>DESIGNED AROUND YOUR BUSINESS</span>
+            <span>Connected systems</span>
+            <span>Human oversight</span>
+            <span>Continuous improvement</span>
+          </div>
         </div>
       </section>
+      <section className="section-space">
+        <div className="section-container">
+          <div className="section-heading">
+            <div>
+              <p className="eyebrow">What we do</p>
+              <h2>
+                From AI potential
+                <br />
+                to practical capability.
+              </h2>
+            </div>
+            <p>
+              GetHello combines bespoke engineering with workflow intelligence products. Start with
+              a specific business challenge, then build the right solution around it.
+            </p>
+          </div>
+          <div className="mt-14 grid gap-5 md:grid-cols-2">
+            {services.map((s) => (
+              <article key={s.number} className="feature-card">
+                <span className="eyebrow text-muted-foreground">{s.number} / SOLUTIONS</span>
+                <h3 className="mt-8 text-2xl font-medium tracking-tight">{s.title}</h3>
+                <p className="mt-4 leading-7 text-muted-foreground">{s.description}</p>
+                <Link
+                  to="/solutions"
+                  className="mt-6 inline-flex items-center gap-2 text-sm font-semibold"
+                >
+                  Explore solution <ArrowUpRight size={16} />
+                </Link>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+      <section className="section-space bg-secondary">
+        <div className="section-container">
+          <div className="section-heading">
+            <div>
+              <p className="eyebrow">Product capabilities</p>
+              <h2>
+                Build. Connect.
+                <br />
+                Keep improving.
+              </h2>
+            </div>
+            <p>
+              Explore our workflow intelligence products for developing, running, and improving
+              AI-enabled business processes. Discuss the right configuration for your use case.
+            </p>
+          </div>
+          <div className="mt-14 grid gap-6 lg:grid-cols-3">
+            {products.map((p) => (
+              <article key={p.number} className="product-card">
+                <span className="eyebrow text-muted-foreground">{p.category}</span>
+                <div className="my-8 flex h-24 items-center gap-3" aria-hidden="true">
+                  <span className="product-tile">{p.number}</span>
+                  <span className="h-px flex-1 bg-border" />
+                  <span className="product-tile !bg-foreground !text-background">
+                    <ArrowUpRight />
+                  </span>
+                </div>
+                <h3 className="text-2xl font-medium">{p.title}</h3>
+                <p className="mt-4 flex-1 text-sm leading-7 text-muted-foreground">
+                  {p.description}
+                </p>
+                <Link
+                  to="/brands"
+                  className="mt-8 inline-flex items-center gap-2 text-sm font-semibold"
+                >
+                  Explore capabilities <ArrowRight size={16} />
+                </Link>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+      <section className="section-space">
+        <div className="section-container">
+          <p className="eyebrow">How we work</p>
+          <h2 className="mt-5 text-4xl font-medium tracking-tight md:text-5xl">
+            A clear path to useful AI.
+          </h2>
+          <div className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+            {deliverySteps.map((s, i) => (
+              <div key={s.title} className="border-t border-border pt-6">
+                <span className="text-sm text-muted-foreground">0{i + 1}</span>
+                <h3 className="mt-8 text-2xl font-medium">{s.title}</h3>
+                <p className="mt-4 text-sm leading-7 text-muted-foreground">{s.text}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+      <ContactCTA />
     </SiteLayout>
   );
 }

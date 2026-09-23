@@ -1,84 +1,63 @@
-import { createFileRoute } from "@tanstack/react-router";
-import { PageHero, SiteLayout } from "@/components/site/Layout";
-import { brands } from "@/components/site/brands";
-
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { ArrowUpRight, Check } from "lucide-react";
+import { ContactCTA, PageHero, SiteLayout } from "@/components/site/Layout";
+import { pageMeta, products } from "@/components/site/content";
 export const Route = createFileRoute("/brands")({
-  head: () => ({
-    meta: [
-      { title: "Our Brands — Get Hello" },
-      {
-        name: "description",
-        content:
-          "Explore the apps that make up Get Hello — from HiYo and Sparkle to Crossed, BrewMatch, Aria Live and Pebble.",
-      },
-      { property: "og:title", content: "Our Brands — Get Hello" },
-      {
-        property: "og:description",
-        content:
-          "A portfolio of social, dating and live entertainment apps connecting more than a billion people.",
-      },
-    ],
-  }),
-  component: BrandsPage,
+  head: () =>
+    pageMeta(
+      "Workflow Intelligence Products",
+      "Explore GetHello product capabilities for workflow development, knowledge intelligence, and workflow insights.",
+    ),
+  component: ProductsPage,
 });
-
-function BrandsPage() {
+function ProductsPage() {
   return (
     <SiteLayout>
       <PageHero
-        eyebrow="Our Brands"
-        title="One family of apps. Endless ways to connect."
-        description="Each Get Hello brand is built for a different moment — from your daily commute to a Friday night out, from a chance encounter to a long-term relationship."
+        eyebrow="Workflow intelligence products"
+        title="A foundation for more intelligent work."
+        description="Alongside our custom AI services, GetHello offers workflow intelligence products to help teams develop connected processes and improve how work gets done."
       />
-
-      <section className="bg-background py-20 md:py-28">
-        <div className="mx-auto max-w-7xl px-6 space-y-px overflow-hidden rounded-sm border border-border bg-border">
-          {brands.map((b, i) => (
+      <section className="section-space">
+        <div className="section-container space-y-8">
+          {products.map((p) => (
             <article
-              key={b.name}
-              className="grid gap-8 bg-background p-8 md:grid-cols-12 md:p-12"
+              key={p.number}
+              className="grid gap-10 rounded-xl border border-border bg-card p-8 md:grid-cols-2 md:p-12"
             >
-              <div className="md:col-span-3">
-                <div className="grid h-24 w-24 place-items-center rounded-sm bg-primary text-3xl font-black text-primary-foreground">
-                  {b.name.charAt(0)}
-                </div>
-                <div className="mt-4 text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
-                  Brand {String(i + 1).padStart(2, "0")}
-                </div>
-              </div>
-              <div className="md:col-span-6">
-                <h2 className="text-3xl font-semibold tracking-tight md:text-4xl">
-                  {b.name}
-                </h2>
-                <p className="mt-2 text-lg text-primary">{b.tagline}</p>
-                <p className="mt-5 text-base leading-relaxed text-muted-foreground">
-                  {b.description}
+              <div>
+                <p className="eyebrow">
+                  {p.number} / {p.category}
                 </p>
+                <h2 className="mt-6 text-3xl font-medium tracking-tight md:text-4xl">{p.title}</h2>
+                <p className="mt-5 leading-8 text-muted-foreground">{p.description}</p>
+                <Link
+                  to="/contact"
+                  className="mt-8 inline-flex items-center gap-2 text-sm font-semibold"
+                >
+                  Discuss this product <ArrowUpRight size={17} />
+                </Link>
               </div>
-              <dl className="md:col-span-3 space-y-4 text-sm">
-                <div>
-                  <dt className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
-                    Category
-                  </dt>
-                  <dd className="mt-1 font-medium text-foreground">{b.category}</dd>
-                </div>
-                <div>
-                  <dt className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
-                    Launched
-                  </dt>
-                  <dd className="mt-1 font-medium text-foreground">{b.launched}</dd>
-                </div>
-                <div>
-                  <dt className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
-                    Reach
-                  </dt>
-                  <dd className="mt-1 font-medium text-foreground">{b.reach}</dd>
-                </div>
-              </dl>
+              <div className="rounded-lg bg-secondary p-7">
+                <p className="text-lg font-medium leading-7">{p.useCase}</p>
+                <ul className="mt-7 space-y-5">
+                  {p.features.map((f) => (
+                    <li key={f} className="flex gap-3 text-sm leading-6 text-muted-foreground">
+                      <Check size={18} className="mt-1 shrink-0 text-foreground" />
+                      {f}
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </article>
           ))}
+          <p className="text-sm leading-7 text-muted-foreground">
+            Product capabilities are configured to your requirements. Contact us to discuss
+            availability, integrations, deployment options, and a demonstration for your workflow.
+          </p>
         </div>
       </section>
+      <ContactCTA />
     </SiteLayout>
   );
 }

@@ -1,120 +1,105 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
-import { PageHero, SiteLayout } from "@/components/site/Layout";
-
+import { createFileRoute } from "@tanstack/react-router";
+import { ArrowUpRight } from "lucide-react";
+import { ContactCTA, PageHero, SiteLayout } from "@/components/site/Layout";
+import { company, pageMeta } from "@/components/site/content";
 export const Route = createFileRoute("/who-we-are")({
-  head: () => ({
-    meta: [
-      { title: "Who We Are — Get Hello" },
-      {
-        name: "description",
-        content:
-          "Get Hello builds social and entertainment platforms used by more than a billion people worldwide. Learn about our mission, values and leadership.",
-      },
-      { property: "og:title", content: "Who We Are — Get Hello" },
-      {
-        property: "og:description",
-        content:
-          "Our mission is to redefine social connections by blending technology with human experience.",
-      },
-    ],
-  }),
-  component: WhoWeArePage,
+  head: () =>
+    pageMeta(
+      "About GetHello",
+      "GetHello is a product of SABUPP PTE. LTD., a Singapore company incorporated on 25 November 2022, UEN 202242176K.",
+    ),
+  component: AboutPage,
 });
-
-const values = [
-  {
-    title: "People first",
-    body: "Every product decision starts with the human on the other side of the screen — their safety, their time and their trust.",
-  },
-  {
-    title: "Local at scale",
-    body: "We design for the texture of each market we serve, with teams embedded across Asia, Europe and the Americas.",
-  },
-  {
-    title: "Earn long-term trust",
-    body: "Safety, privacy and integrity are not features — they are the foundation we build everything else on.",
-  },
-  {
-    title: "Build for joy",
-    body: "Social products only work when they make people happier. We invest in moments of delight, not dark patterns.",
-  },
-];
-
-
-function WhoWeArePage() {
+function AboutPage() {
   return (
     <SiteLayout>
       <PageHero
-        eyebrow="Who We Are"
-        title="A global home for the apps that bring people together."
-        description="Founded in 2011, Get Hello is a portfolio of social and entertainment platforms designed to help more than a billion people meet, connect and build relationships that matter."
+        eyebrow="GetHello by Sabupps"
+        title="Technology with a clear job to do."
+        description="GetHello is a product of Sabupps, focused on AI agentic solutions and workflow intelligence for businesses."
       />
-
-      <section className="bg-background py-24 md:py-32">
-        <div className="mx-auto grid max-w-7xl gap-16 px-6 md:grid-cols-12">
-          <div className="md:col-span-5">
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-primary">
-              Our Story
-            </p>
-            <h2 className="mt-4 text-3xl font-semibold tracking-tight md:text-4xl">
-              From a four-person startup to a global social group.
+      <section className="section-space">
+        <div className="section-container grid gap-14 md:grid-cols-2">
+          <div>
+            <p className="eyebrow">Our focus</p>
+            <h2 className="mt-5 text-4xl font-medium tracking-tight">
+              Help people do
+              <br />
+              their best work.
             </h2>
           </div>
-          <div className="md:col-span-7 space-y-6 text-lg leading-relaxed text-muted-foreground">
+          <div className="space-y-6 text-lg leading-8 text-muted-foreground">
             <p>
-              Get Hello began with a simple belief: technology should make it easier — not
-              harder — to say hello to the people around you. What started as a single
-              location-based social app has grown into a family of platforms used by
-              communities in more than 90 countries.
+              We build AI agents, connected workflows, and practical tools that support the way
+              teams operate. Our work starts with understanding a business process and finding where
+              intelligence can make it more useful.
             </p>
             <p>
-              Today our products span social discovery, dating, live entertainment and
-              creator communities. Behind them is a single mission: redefining social
-              connections by seamlessly blending technology with human experience.
+              GetHello brings this focus into the Sabupps ecosystem, alongside its cloud services,
+              application development, and advertising operations.
             </p>
+            <a
+              href={company.website}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 text-base font-semibold text-foreground"
+            >
+              Explore Sabupps <ArrowUpRight size={18} />
+            </a>
           </div>
         </div>
       </section>
-
-      <section className="border-y border-border bg-secondary py-24 md:py-32">
-        <div className="mx-auto max-w-7xl px-6">
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-primary">
-            Our Values
-          </p>
-          <h2 className="mt-4 max-w-2xl text-3xl font-semibold tracking-tight md:text-4xl">
-            Four principles that guide how we build.
-          </h2>
-          <div className="mt-14 grid gap-px overflow-hidden rounded-sm border border-border bg-border sm:grid-cols-2">
-            {values.map((v) => (
-              <div key={v.title} className="bg-background p-8 md:p-10">
-                <h3 className="text-xl font-semibold">{v.title}</h3>
-                <p className="mt-3 text-base leading-relaxed text-muted-foreground">
-                  {v.body}
-                </p>
+      <section className="section-space bg-secondary">
+        <div className="section-container">
+          <p className="eyebrow">Our approach</p>
+          <div className="mt-10 grid gap-8 md:grid-cols-3">
+            {[
+              {
+                title: "Business context first",
+                text: "Choose a real process and define what success looks like before choosing the technology.",
+              },
+              {
+                title: "People stay in control",
+                text: "Design clear permissions, review points, and escalation paths into the workflow.",
+              },
+              {
+                title: "Built to improve",
+                text: "Make outcomes visible so teams can evaluate what works and refine what comes next.",
+              },
+            ].map((x) => (
+              <div key={x.title} className="border-t border-border pt-6">
+                <h2 className="text-xl font-medium">{x.title}</h2>
+                <p className="mt-4 leading-7 text-muted-foreground">{x.text}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
-
-      <section className="bg-background py-24 md:py-32">
-        <div className="mx-auto max-w-7xl px-6">
-          <div className="flex flex-wrap gap-4">
-            <Link
-              to="/brands"
-              className="inline-flex h-12 items-center justify-center rounded-sm bg-primary px-7 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary/90"
-            >
-              See our brands
-            </Link>
-            <Link
-              to="/careers"
-              className="inline-flex h-12 items-center justify-center rounded-sm border border-border px-7 text-sm font-semibold text-foreground transition-colors hover:bg-secondary"
-            >
-              Join the team
-            </Link>
+      <section className="section-space">
+        <div className="section-container grid gap-12 md:grid-cols-2">
+          <div>
+            <p className="eyebrow">The company behind GetHello</p>
+            <h2 className="mt-5 text-3xl font-medium">{company.name}</h2>
+            <p className="mt-5 leading-7 text-muted-foreground">
+              Incorporated in Singapore on 25 November 2022. GetHello is a product of Sabupps; the
+              operating legal entity is SABUPP PTE. LTD.
+            </p>
           </div>
+          <dl className="divide-y divide-border text-sm">
+            {[
+              ["Registration number (UEN)", company.uen],
+              ["Registered address", company.address],
+              ["Company website", "sabupps.com"],
+            ].map(([label, value]) => (
+              <div key={label} className="py-5 first:pt-0">
+                <dt className="text-muted-foreground">{label}</dt>
+                <dd className="mt-2 leading-7">{value}</dd>
+              </div>
+            ))}
+          </dl>
         </div>
       </section>
+      <ContactCTA />
     </SiteLayout>
   );
 }
