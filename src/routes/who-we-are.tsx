@@ -88,7 +88,6 @@ function AboutPage() {
           <dl className="divide-y divide-border text-sm">
             {[
               ["Registration number (UEN)", company.uen],
-              ["Registered address", company.address],
               ["Company website", "sabupps.com"],
             ].map(([label, value]) => (
               <div key={label} className="py-5 first:pt-0">

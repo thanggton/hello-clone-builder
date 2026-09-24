@@ -122,7 +122,6 @@ export function SiteFooter() {
           <div>
             <h2 className="text-sm font-semibold">{company.name}</h2>
             <p className="mt-5 text-sm text-white/60">UEN {company.uen}</p>
-            <p className="mt-3 text-sm leading-7 text-white/60">{company.address}</p>
             <a className="mt-4 inline-block text-sm text-primary" href={`mailto:${company.email}`}>
               {company.email}
             </a>

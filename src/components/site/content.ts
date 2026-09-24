@@ -3,8 +3,7 @@ export const company = {
   brand: "Sabupps",
   uen: "202242176K",
   website: "https://sabupps.com",
-  email: "yori@sabupps.com",
-  address: "260B Ang Mo Kio Street 21, #18-153, Kebun Baru Court, Singapore 562260",
+  email: "contact@sabupps.com",
 };
 
 export const services = [

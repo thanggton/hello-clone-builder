@@ -7,7 +7,7 @@ export const Route = createFileRoute("/contact")({
   head: () =>
     pageMeta(
       "Contact",
-      "Discuss DSP campaigns and mobile app distribution with GetHello by Sabupps. Contact yori@sabupps.com.",
+      "Discuss DSP campaigns and mobile app distribution with GetHello by Sabupps. Contact contact@sabupps.com.",
     ),
   component: ContactPage,
 });
@@ -47,10 +47,6 @@ function ContactPage() {
             <div className="mt-12 border-t border-border pt-8">
               <h3 className="font-semibold">{company.name}</h3>
               <p className="mt-2 text-sm text-muted-foreground">UEN {company.uen}</p>
-              <p className="mt-6 text-xs font-semibold uppercase tracking-widest text-muted-foreground">
-                Registered address
-              </p>
-              <p className="mt-3 max-w-sm text-sm leading-7">{company.address}</p>
               <a
                 href={company.website}
                 target="_blank"
