@@ -7,7 +7,7 @@ export const Route = createFileRoute("/contact")({
   head: () =>
     pageMeta(
       "Contact",
-      "Discuss AI agentic solutions and workflow intelligence with GetHello by Sabupps. Contact yori@sabupps.com.",
+      "Discuss DSP campaigns and mobile app distribution with GetHello by Sabupps. Contact yori@sabupps.com.",
     ),
   component: ContactPage,
 });
@@ -24,9 +24,9 @@ function ContactPage() {
   return (
     <SiteLayout>
       <PageHero
-        eyebrow="Let’s build something useful"
-        title="Start with your next business challenge."
-        description="Tell us about the workflow you want to improve, an AI agent you want to build, or a product capability you’d like to explore."
+        eyebrow="Let’s connect"
+        title="Where do you want to reach next?"
+        description="Tell us about your advertising goals, APAC business, international audiences, or mobile application network."
       />
       <section className="section-space">
         <div className="section-container grid gap-16 lg:grid-cols-[1fr_1.3fr]">
@@ -34,8 +34,8 @@ function ContactPage() {
             <p className="eyebrow">Contact GetHello</p>
             <h2 className="mt-5 text-3xl font-medium">A conversation starts here.</h2>
             <p className="mt-5 leading-7 text-muted-foreground">
-              For project enquiries, product demonstrations, and partnerships, contact the Sabupps
-              team.
+              For campaign enquiries, DSP demonstrations, and publisher partnerships, contact the
+              Sabupps team.
             </p>
             <a
               href={`mailto:${company.email}`}
@@ -75,16 +75,16 @@ function ContactPage() {
                   I’m interested in
                 </label>
                 <select id="interest" name="interest" className="form-input">
-                  <option>Custom AI agents</option>
-                  <option>Workflow automation</option>
-                  <option>Workflow intelligence products</option>
+                  <option>DSP campaigns for APAC enterprises</option>
+                  <option>Agency media buying</option>
+                  <option>Mobile app distribution</option>
                   <option>Partnerships</option>
                   <option>Other</option>
                 </select>
               </div>
             </div>
             <label htmlFor="message" className="form-label mt-6">
-              Your workflow or project
+              Your campaign or partnership
             </label>
             <textarea
               id="message"
@@ -93,7 +93,7 @@ function ContactPage() {
               maxLength={4000}
               rows={5}
               className="form-input"
-              placeholder="What does your team do today, and what would you like to improve?"
+              placeholder="Which markets, audiences, and campaign goals would you like to discuss?"
             />
             <p className="mt-4 text-xs leading-6 text-muted-foreground">
               This form prepares a draft in your email app. Review and send it there. You can also

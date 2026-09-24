@@ -10,102 +10,112 @@ export const company = {
 export const services = [
   {
     number: "01",
-    title: "Custom AI agents",
+    title: "Programmatic media buying",
     description:
-      "Purpose-built agents that understand your business context, use your tools, and take action within clearly defined boundaries.",
+      "Buy digital ad space in real time across connected websites, mobile apps, and media channels through one demand-side platform.",
     features: [
-      "Agent architecture and tool integration",
-      "Multi-step task planning and execution",
-      "Human review for consequential actions",
+      "Campaign objectives and budget planning",
+      "Automated bidding for eligible ad opportunities",
+      "Campaign delivery across connected inventory",
     ],
   },
   {
     number: "02",
-    title: "Knowledge & AI assistants",
+    title: "Mobile application distribution",
     description:
-      "Connect your documents and business knowledge to assistants that help teams find answers and move work forward.",
+      "Connect advertiser demand with a mobile application network to distribute ads within the experiences people use every day.",
     features: [
-      "Knowledge retrieval and source references",
-      "Document processing and structured extraction",
-      "Access-aware integration with your systems",
+      "Mobile app inventory connections",
+      "Ad delivery within participating applications",
+      "Placement and format planning with publishers",
     ],
   },
   {
     number: "03",
-    title: "Intelligent workflow automation",
+    title: "APAC enterprise campaigns",
     description:
-      "Bring rules, AI decisions, and human approvals into one connected process across your existing applications.",
+      "Support enterprises and agencies across Asia Pacific as they plan and run campaigns for international audiences.",
     features: [
-      "CRM, help desk, and internal tool integrations",
-      "Approval routing and exception handling",
-      "Execution history and operational visibility",
+      "Market and audience planning",
+      "Campaign setup and creative coordination",
+      "A central point of contact for delivery",
     ],
   },
   {
     number: "04",
-    title: "Deployment & continuous improvement",
+    title: "Campaign measurement",
     description:
-      "Take a focused pilot into everyday operations with evaluation, monitoring, and an improvement plan built around your goals.",
+      "Use delivery and performance signals to understand results and refine the next campaign decision.",
     features: [
-      "Use-case discovery and pilot design",
-      "Quality, cost, and reliability evaluation",
-      "Deployment support and ongoing iteration",
+      "Impression and engagement reporting",
+      "Budget and delivery review",
+      "Ongoing campaign optimisation",
     ],
-  },
-];
-
-export const products = [
-  {
-    number: "01",
-    title: "Workflow development",
-    category: "BUILD & ORCHESTRATE",
-    description:
-      "Create intelligent workflows that connect triggers, AI agents, business rules, and human approvals.",
-    features: [
-      "Reusable workflow steps and integrations",
-      "Decision routing and approval checkpoints",
-      "Execution traces for debugging and refinement",
-    ],
-    useCase: "From an incoming request to a reviewed, completed task.",
-  },
-  {
-    number: "02",
-    title: "Knowledge intelligence",
-    category: "CONNECT & UNDERSTAND",
-    description: "Make business knowledge useful inside the workflows where your team needs it.",
-    features: [
-      "Document ingestion and retrieval",
-      "Contextual answers with source references",
-      "Knowledge-assisted task execution",
-    ],
-    useCase: "From scattered documents to answers grounded in your business.",
-  },
-  {
-    number: "03",
-    title: "Workflow insights",
-    category: "OBSERVE & IMPROVE",
-    description:
-      "Understand how work moves, where exceptions happen, and which steps need attention.",
-    features: [
-      "Workflow activity and outcome visibility",
-      "Bottleneck and exception review",
-      "Feedback loops for ongoing improvement",
-    ],
-    useCase: "From process activity to a clearer next improvement.",
   },
 ];
 
 export const deliverySteps = [
   {
-    title: "Discover",
-    text: "Map your workflow, data, constraints, and the outcome that matters.",
+    title: "Plan",
+    text: "An advertiser defines the audience, markets, creative, and campaign budget.",
   },
-  { title: "Build", text: "Develop a focused pilot with your systems and real working scenarios." },
   {
-    title: "Validate",
-    text: "Evaluate quality, permissions, handoffs, and failure handling together.",
+    title: "Bid",
+    text: "GetHello evaluates eligible ad opportunities and automates buying in real time.",
   },
-  { title: "Evolve", text: "Deploy, observe, and improve as your operational needs grow." },
+  {
+    title: "Distribute",
+    text: "Connected mobile applications and media inventory deliver the ad to users.",
+  },
+  {
+    title: "Optimise",
+    text: "Campaign results inform the next decisions on budget, placement, and creative.",
+  },
+];
+
+export const appExamples = [
+  {
+    name: "Hiyo",
+    category: "Chat & social discovery",
+    initial: "Hi",
+    color: "#e5dafa",
+    description:
+      "A chat and dating app built around meeting new people, nearby discovery, and conversations.",
+    publisher: "Anastassiya Rybina · Google Play listing",
+    url: "https://play.google.com/store/apps/details?id=com.hiyo.chat.android&hl=en",
+    sourceLabel: "View on Google Play",
+    source: "https://play.google.com/store/apps/details?id=com.hiyo.chat.android&hl=en",
+  },
+  {
+    name: "BFF",
+    category: "Friendship & community",
+    initial: "bff",
+    color: "#fff0ac",
+    description:
+      "Bumble’s friendship app for finding friends, connecting in groups, and building community.",
+    publisher: "Bumble Inc. · United States",
+    url: "https://bumble.com/bff",
+    sourceLabel: "Explore BFF",
+    source: "https://ir.bumble.com/",
+  },
+  {
+    name: "Yubo",
+    category: "Social discovery & chat",
+    initial: "Y",
+    color: "#e2efb7",
+    description:
+      "A social discovery app for meeting new people and building friendships through conversation.",
+    publisher: "Twelve-App SAS · France",
+    url: "https://www.yubo.live/",
+    sourceLabel: "Explore Yubo",
+    source: "https://www.yubo.live/legal/terms-of-service",
+  },
+];
+
+export const partners = [
+  { name: "TikTok", logo: "/logos/tiktok.svg", url: "https://ads.tiktok.com/business/" },
+  { name: "Meta", logo: "/logos/meta.svg", url: "https://www.facebook.com/business/" },
+  { name: "Google Ads", logo: "/logos/google-ads.svg", url: "https://ads.google.com/" },
 ];
 
 export function pageMeta(title: string, description: string) {

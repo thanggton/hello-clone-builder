@@ -81,14 +81,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         name: "description",
         content:
-          "AI agentic solutions and workflow intelligence. GetHello is a product of SABUPP PTE. LTD.",
+          "A demand-side platform connecting APAC advertisers with international mobile audiences. GetHello is a product of SABUPP PTE. LTD.",
       },
       { name: "author", content: "SABUPP PTE. LTD." },
       { property: "og:title", content: "GetHello by Sabupps" },
       {
         property: "og:description",
         content:
-          "AI agentic solutions and workflow intelligence. GetHello is a product of SABUPP PTE. LTD.",
+          "A demand-side platform connecting APAC advertisers with international mobile audiences. GetHello is a product of SABUPP PTE. LTD.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },

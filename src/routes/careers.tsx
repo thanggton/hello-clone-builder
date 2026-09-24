@@ -6,7 +6,7 @@ export const Route = createFileRoute("/careers")({
   head: () =>
     pageMeta(
       "Work with us",
-      "Connect with Sabupps about opportunities to work on GetHello AI agents and workflow intelligence.",
+      "Connect with Sabupps about opportunities to work on GetHello’s demand-side platform and mobile advertising network.",
     ),
   component: CareersPage,
 });
@@ -15,8 +15,8 @@ function CareersPage() {
     <SiteLayout>
       <PageHero
         eyebrow="Work with us"
-        title="Bring useful AI into everyday work."
-        description="Interested in building AI agents, thoughtful product experiences, or connected business workflows? Get in touch with Sabupps."
+        title="Build the next connection in digital advertising."
+        description="Interested in programmatic advertising, mobile applications, or international audience growth? Get in touch with Sabupps."
       />
       <section className="section-space">
         <div className="section-container max-w-3xl">

@@ -4,8 +4,8 @@ import { ArrowUpRight, Menu, X } from "lucide-react";
 import { company } from "./content";
 
 const navLinks = [
-  { label: "Solutions", to: "/solutions" as const },
-  { label: "Products", to: "/brands" as const },
+  { label: "DSP Platform", to: "/solutions" as const },
+  { label: "Apps & Audiences", to: "/brands" as const },
   { label: "About", to: "/who-we-are" as const },
   { label: "Contact", to: "/contact" as const },
 ];
@@ -90,8 +90,8 @@ export function SiteFooter() {
           <div>
             <Logo />
             <p className="mt-6 max-w-sm text-sm leading-7 text-white/60">
-              AI agentic solutions and workflow intelligence. Built around the way your business
-              works.
+              A demand-side platform connecting APAC advertisers with international audiences
+              through mobile apps and digital media.
             </p>
             <a
               href={company.website}
@@ -182,16 +182,16 @@ export function ContactCTA() {
     <section className="border-t border-border bg-secondary py-20">
       <div className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-8 px-6 md:flex-row md:items-center">
         <div>
-          <p className="eyebrow">Start with one workflow</p>
+          <p className="eyebrow">Connect with your next audience</p>
           <h2 className="mt-4 text-3xl font-medium tracking-tight md:text-4xl">
-            What could your team do next?
+            Ready to make your next connection?
           </h2>
           <p className="mt-4 max-w-xl text-muted-foreground">
-            Tell us where work gets stuck. We’ll explore how AI can help.
+            Talk to us about your campaign, target markets, or mobile application network.
           </p>
         </div>
         <Link to="/contact" className="button-primary shrink-0">
-          Discuss your project <ArrowUpRight size={18} />
+          Discuss your campaign <ArrowUpRight size={18} />
         </Link>
       </div>
     </section>

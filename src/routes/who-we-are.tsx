@@ -15,24 +15,24 @@ function AboutPage() {
     <SiteLayout>
       <PageHero
         eyebrow="GetHello by Sabupps"
-        title="Technology with a clear job to do."
-        description="GetHello is a product of Sabupps, focused on AI agentic solutions and workflow intelligence for businesses."
+        title="Connecting businesses, apps, and people."
+        description="GetHello is a demand-side platform and a product of Sabupps. Our B2B and B2C model connects APAC enterprises with users of mobile applications in international markets."
       />
       <section className="section-space">
         <div className="section-container grid gap-14 md:grid-cols-2">
           <div>
             <p className="eyebrow">Our focus</p>
             <h2 className="mt-5 text-4xl font-medium tracking-tight">
-              Help people do
+              Help brands reach
               <br />
-              their best work.
+              their next audience.
             </h2>
           </div>
           <div className="space-y-6 text-lg leading-8 text-muted-foreground">
             <p>
-              We build AI agents, connected workflows, and practical tools that support the way
-              teams operate. Our work starts with understanding a business process and finding where
-              intelligence can make it more useful.
+              GetHello automates real-time buying of digital ad space across websites, apps, and
+              media channels. By connecting with a mobile application network, we help distribute
+              advertiser campaigns to users abroad.
             </p>
             <p>
               GetHello brings this focus into the Sabupps ecosystem, alongside its cloud services,
@@ -55,16 +55,16 @@ function AboutPage() {
           <div className="mt-10 grid gap-8 md:grid-cols-3">
             {[
               {
-                title: "Business context first",
-                text: "Choose a real process and define what success looks like before choosing the technology.",
+                title: "B2B: APAC enterprises",
+                text: "Enterprises and agencies use the DSP to connect campaign goals with digital media buying and distribution.",
               },
               {
-                title: "People stay in control",
-                text: "Design clear permissions, review points, and escalation paths into the workflow.",
+                title: "B2C: international users",
+                text: "Our consumer focus spans the people using social discovery, friendship, chat, and dating applications overseas.",
               },
               {
-                title: "Built to improve",
-                text: "Make outcomes visible so teams can evaluate what works and refine what comes next.",
+                title: "A connected mobile network",
+                text: "Mobile application distribution brings advertiser campaigns into participating app experiences, with results informing ongoing optimisation.",
               },
             ].map((x) => (
               <div key={x.title} className="border-t border-border pt-6">

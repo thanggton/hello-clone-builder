@@ -5,8 +5,8 @@ import { pageMeta, services } from "@/components/site/content";
 export const Route = createFileRoute("/solutions")({
   head: () =>
     pageMeta(
-      "AI Agentic Solutions",
-      "Custom AI agents, knowledge assistants, workflow automation, and deployment services from GetHello by Sabupps.",
+      "Demand-Side Platform",
+      "Real-time ad buying and mobile application distribution for APAC enterprises and agencies.",
     ),
   component: SolutionsPage,
 });
@@ -14,9 +14,9 @@ function SolutionsPage() {
   return (
     <SiteLayout>
       <PageHero
-        eyebrow="AI Agentic Solutions"
-        title="Your business context. Our engineering. Useful AI."
-        description="We design and build AI solutions around your processes, people, and systems, from a first use case to an integrated operational workflow."
+        eyebrow="Demand-Side Platform"
+        title="From advertiser demand to mobile audiences."
+        description="GetHello automates digital media buying and connects with a mobile application network to distribute advertising across international markets."
       />
       <section className="section-space">
         <div className="section-container grid gap-6 md:grid-cols-2">
@@ -39,23 +39,23 @@ function SolutionsPage() {
       </section>
       <section className="section-space bg-secondary">
         <div className="section-container">
-          <p className="eyebrow">Where to begin</p>
+          <p className="eyebrow">Who we serve</p>
           <h2 className="mt-5 text-4xl font-medium tracking-tight">
-            Start with the work, not the model.
+            Built for APAC. Connected internationally.
           </h2>
           <div className="mt-12 grid gap-8 md:grid-cols-3">
             {[
               {
-                title: "Customer operations",
-                text: "Classify requests, retrieve relevant knowledge, draft responses, and route exceptions to the right person.",
+                title: "Enterprise advertisers",
+                text: "Plan digital advertising around your business goals, audiences, and target markets across APAC and beyond.",
               },
               {
-                title: "Internal operations",
-                text: "Extract information from documents, coordinate approvals, and keep business systems in sync.",
+                title: "Agencies",
+                text: "Coordinate media buying and campaign delivery for clients through a single demand-side platform.",
               },
               {
-                title: "Team knowledge",
-                text: "Help teams search internal information and turn trusted context into actionable next steps.",
+                title: "Mobile app publishers",
+                text: "Connect available advertising placements in your applications with advertiser demand and international campaigns.",
               },
             ].map((x) => (
               <div key={x.title}>
@@ -65,8 +65,8 @@ function SolutionsPage() {
             ))}
           </div>
           <p className="mt-10 text-sm text-muted-foreground">
-            Illustrative use cases. Scope, integrations, and success criteria are defined with each
-            client.
+            Inventory, formats, market availability, and campaign terms are agreed for each
+            engagement.
           </p>
         </div>
       </section>
