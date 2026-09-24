@@ -126,27 +126,19 @@ export function AppShowcase() {
                 {app.description}
               </p>
               <a
-                href={app.source}
-                target="_blank"
-                rel="noreferrer"
-                className="mt-5 text-xs leading-6 text-muted-foreground underline underline-offset-4"
-              >
-                {app.publisher}
-              </a>
-              <a
                 href={app.url}
                 target="_blank"
                 rel="noreferrer"
                 className="mt-6 inline-flex items-center gap-2 text-sm font-semibold"
               >
-                {app.sourceLabel}
+                View on Google Play
                 <ArrowUpRight size={16} />
               </a>
             </article>
           ))}
         </div>
         <p className="mt-7 text-xs leading-6 text-muted-foreground">
-          Category examples only. Hiyo, BFF, and Yubo are not presented as GetHello-owned apps or
+          Category examples only. Hiyo, Boo, and purp are not presented as GetHello-owned apps or
           confirmed members of its advertising network. Their names belong to their respective
           owners.
         </p>

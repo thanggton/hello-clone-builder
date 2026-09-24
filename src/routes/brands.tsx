@@ -6,7 +6,7 @@ export const Route = createFileRoute("/brands")({
   head: () =>
     pageMeta(
       "Mobile Apps & Audiences",
-      "Explore GetHello’s B2C focus on international social app users, with Hiyo, BFF, and Yubo as independent category examples.",
+      "Explore GetHello’s B2C focus on international social app users, with Hiyo, Boo, and purp as independent category examples.",
     ),
   component: AppsPage,
 });
