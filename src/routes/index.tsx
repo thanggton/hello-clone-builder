@@ -46,7 +46,7 @@ function Index() {
           >
             <div className="mb-8 border-b border-white/10 pb-5">
               <span className="text-sm font-medium">From advertiser to audience</span>
-              <p className="mt-2 text-xs text-white/50">An illustrative campaign journey</p>
+              <p className="mt-2 text-xs text-white/50">The campaign journey</p>
             </div>
             {[
               { icon: Megaphone, label: "01 / DEMAND", title: "APAC enterprises & agencies" },

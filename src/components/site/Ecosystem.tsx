@@ -106,8 +106,8 @@ export function AppShowcase() {
           </div>
           <p>
             Chat, friendship, and social discovery are the consumer categories behind our
-            international audience focus. These independently operated apps illustrate that
-            landscape.
+            international audience focus. Explore apps built around meeting people and starting
+            conversations.
           </p>
         </div>
         <div className="mt-12 grid gap-6 lg:grid-cols-3">
@@ -137,11 +137,6 @@ export function AppShowcase() {
             </article>
           ))}
         </div>
-        <p className="mt-7 text-xs leading-6 text-muted-foreground">
-          Category examples only. Hiyo, Boo, and purp are not presented as GetHello-owned apps or
-          confirmed members of its advertising network. Their names belong to their respective
-          owners.
-        </p>
       </div>
     </section>
   );
